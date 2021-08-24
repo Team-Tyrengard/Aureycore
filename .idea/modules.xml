@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/AureyCore.iml" filepath="$PROJECT_DIR$/AureyCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aureycore/aureycore.iml" filepath="$PROJECT_DIR$/aureycore/aureycore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aureycore-actionbar-engine/aureycore-actionbar-engine.iml" filepath="$PROJECT_DIR$/aureycore-actionbar-engine/aureycore-actionbar-engine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aureycore-commons/aureycore-commons.iml" filepath="$PROJECT_DIR$/aureycore-commons/aureycore-commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aureycore-custom-guis/aureycore-customguis.iml" filepath="$PROJECT_DIR$/aureycore-custom-guis/aureycore-customguis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aureycore-custom-items/aureycore-customitems.iml" filepath="$PROJECT_DIR$/aureycore-custom-items/aureycore-customitems.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aureycore-damage-indicator/aureycore-damage-indicator.iml" filepath="$PROJECT_DIR$/aureycore-damage-indicator/aureycore-damage-indicator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aureycore-foundation/aureycore-foundation.iml" filepath="$PROJECT_DIR$/aureycore-foundation/aureycore-foundation.iml" />
+    </modules>
+  </component>
+</project>

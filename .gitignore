@@ -1,0 +1,4 @@
+# Project exclude paths
+/.externalToolBuilders/
+/.settings/
+/aureycore-custom-items/target/

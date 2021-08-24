@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.havengarde.aureycore</groupId>
+    <artifactId>aggregator</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <name>Aggregator - Aureycore</name>
+    <properties>
+        <maven.compiler.version>3.8.1</maven.compiler.version>
+        <maven.compiler.release>16</maven.compiler.release>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <sentry.version>5.0.1</sentry.version>
+    </properties>
+
+    <modules>
+        <module>aureycore-commons</module>
+        <module>aureycore-foundation</module>
+        <module>aureycore-actionbar-engine</module>
+        <module>aureycore-damage-indicator</module>
+        <module>aureycore-custom-guis</module>
+        <module>aureycore-custom-items</module>
+        <module>aureycore</module>
+    </modules>
+
+    <repositories>
+        <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Provided dependencies -->
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>net.havengarde.aureycore</groupId>
+                <artifactId>aureycore-commons</artifactId>
+                <version>1.0</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>net.havengarde.aureycore</groupId>
+                <artifactId>aureycore-customguis</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>net.havengarde.aureycore</groupId>
+                <artifactId>aureycore-customitems</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>net.havengarde.aureycore</groupId>
+                <artifactId>aureycore-damage-indicator</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>net.havengarde.aureycore</groupId>
+                <artifactId>aureycore-actionbar-engine</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>net.havengarde.aureycore</groupId>
+                <artifactId>aureycore-foundation</artifactId>
+                <version>1.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <defaultGoal>clean install</defaultGoal>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>3.2.4</version>
+                    <configuration>
+                        <createDependencyReducedPom>false</createDependencyReducedPom>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>shade</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+    </build>
+</project>
