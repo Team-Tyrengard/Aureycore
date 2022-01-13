@@ -20,7 +20,7 @@
     </properties>
 
     <name>Aureycore</name>
-    <description>Spigot plugin framework and server utility</description>
+    <description>Spigot plugin framework and server utilities</description>
 
     <repositories>
         <repository>
@@ -31,43 +31,6 @@
 
     <dependencies>
         <!-- Foundation -->
-<!--        <dependency>-->
-<!--            <groupId>com.github.reiramirez.conduit</groupId>-->
-<!--            <artifactId>conduit-orm</artifactId>-->
-<!--            <version>1.0-SNAPSHOT</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.github.reiramirez.conduit</groupId>-->
-<!--            <artifactId>conduit-annotations</artifactId>-->
-<!--            <version>1.0-SNAPSHOT</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.logging.log4j</groupId>-->
-<!--            <artifactId>log4j-slf4j18-impl</artifactId>-->
-<!--            <version>2.14.1</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.logging.log4j</groupId>-->
-<!--            <artifactId>log4j-api</artifactId>-->
-<!--            <version>2.14.1</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.zaxxer</groupId>-->
-<!--            <artifactId>HikariCP</artifactId>-->
-<!--            <version>4.0.3</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>mysql</groupId>-->
-<!--            <artifactId>mysql-connector-java</artifactId>-->
-<!--            <version>8.0.25</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.jetbrains</groupId>-->
-<!--            <artifactId>annotations-java5</artifactId>-->
-<!--            <version>20.1.0</version>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
-
         <!-- Morphia / MongoDB -->
         <dependency>
             <groupId>dev.morphia.morphia</groupId>
@@ -108,13 +71,6 @@
                             <pattern>com.google.gson</pattern>
                             <shadedPattern>com.tyrengard.aureycore.internal.gson</shadedPattern>
                         </relocation>
-<!--                        <relocation>-->
-<!--                            <pattern>dev.morphia</pattern>-->
-<!--                            <shadedPattern>com.tyrengard.aureycore.internal.morphia</shadedPattern>-->
-<!--                            <excludes>-->
-<!--                                <exclude>dev.morphia.annotations.*</exclude>-->
-<!--                            </excludes>-->
-<!--                        </relocation>-->
                     </relocations>
                     <filters>
                         <filter>
