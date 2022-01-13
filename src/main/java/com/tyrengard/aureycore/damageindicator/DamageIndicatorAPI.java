@@ -4,8 +4,8 @@ import java.util.Map;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import com.tyrengard.aureycore.common.stringformat.Color;
-import com.tyrengard.aureycore.common.utils.TaskUtils;
+import com.tyrengard.aureycore.foundation.common.stringformat.Color;
+import com.tyrengard.aureycore.foundation.common.utils.TaskUtils;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.entity.ArmorStand;

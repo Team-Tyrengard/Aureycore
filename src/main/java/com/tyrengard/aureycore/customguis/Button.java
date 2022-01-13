@@ -3,9 +3,9 @@ package com.tyrengard.aureycore.customguis;
 import java.util.List;
 import java.util.Map;
 
-import com.tyrengard.aureycore.common.stringformat.Color;
-import com.tyrengard.aureycore.common.interfaces.TriConsumer;
-import com.tyrengard.aureycore.common.utils.EnchantUtils;
+import com.tyrengard.aureycore.foundation.common.stringformat.Color;
+import com.tyrengard.aureycore.foundation.common.interfaces.TriConsumer;
+import com.tyrengard.aureycore.foundation.common.utils.EnchantUtils;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.inventory.InventoryClickEvent;

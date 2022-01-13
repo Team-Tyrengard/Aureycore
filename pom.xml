@@ -6,7 +6,7 @@
 
     <groupId>com.tyrengard</groupId>
     <artifactId>aureycore</artifactId>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
         <maven.compiler.version>3.8.1</maven.compiler.version>
@@ -17,30 +17,34 @@
 
         <sentry.version>5.0.1</sentry.version>
         <conduit.version>1.0</conduit.version>
+        <aureycore.foundation.version>1.0-SNAPSHOT</aureycore.foundation.version>
     </properties>
 
     <name>Aureycore</name>
-    <description>Spigot plugin framework and server utilities</description>
+    <description>Utility plugin and API for Spigot servers</description>
 
     <repositories>
         <repository>
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>sonatype-snapshots</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
     </repositories>
 
     <dependencies>
-        <!-- Foundation -->
-        <!-- Morphia / MongoDB -->
         <dependency>
-            <groupId>dev.morphia.morphia</groupId>
-            <artifactId>morphia-core</artifactId>
-            <version>2.2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>4.4.0</version>
+            <groupId>com.tyrengard.aureycore</groupId>
+            <artifactId>aureycore-foundation</artifactId>
+            <version>${aureycore.foundation.version}</version>
         </dependency>
 
         <!-- Provided dependencies -->
@@ -48,6 +52,12 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.18.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>23.0.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -72,12 +82,18 @@
                             <shadedPattern>com.tyrengard.aureycore.internal.gson</shadedPattern>
                         </relocation>
                     </relocations>
+                    <artifactSet>
+                        <excludes>
+                            <exclude>org.jetbrains.annotations</exclude>
+                        </excludes>
+                    </artifactSet>
                     <filters>
                         <filter>
                             <artifact>*:*</artifact>
                             <excludes>
-                                <exclude>module-info.class</exclude>
+                                <exclude>module-info</exclude>
                                 <exclude>META-INF/MANIFEST.MF</exclude>
+                                <exclude>META-INF.versions.9.module-info</exclude>
                             </excludes>
                         </filter>
                     </filters>

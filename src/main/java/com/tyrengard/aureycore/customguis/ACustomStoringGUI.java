@@ -2,8 +2,8 @@ package com.tyrengard.aureycore.customguis;
 
 import java.util.Arrays;
 
-import com.tyrengard.aureycore.common.utils.InventoryUtils;
-import com.tyrengard.aureycore.common.utils.ItemUtils;
+import com.tyrengard.aureycore.foundation.common.utils.InventoryUtils;
+import com.tyrengard.aureycore.foundation.common.utils.ItemUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;

@@ -1,6 +1,6 @@
 package com.tyrengard.aureycore.customguis;
 
-import com.tyrengard.aureycore.common.utils.TaskUtils;
+import com.tyrengard.aureycore.foundation.common.utils.TaskUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;

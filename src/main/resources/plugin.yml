@@ -5,4 +5,4 @@ api-version: 1.17
 load: STARTUP
 authors: [ hayachikin, AureanAutumn ]
 prefix: Aureycore
-description: Spigot plugin framework and server utility
+description: Utility plugin and API for Spigot servers
