@@ -21,7 +21,7 @@
     </properties>
 
     <name>Aureycore</name>
-    <description>Spigot plugin framework and server utilities</description>
+    <description>Utility plugin and API for Spigot servers</description>
 
     <repositories>
         <repository>
