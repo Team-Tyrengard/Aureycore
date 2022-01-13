@@ -11,7 +11,7 @@
 //import org.bukkit.event.Listener;
 //import org.bukkit.event.player.PlayerQuitEvent;
 //
-//import com.tyrengard.aureycore.common.utils.TaskUtils;
+//import com.tyrengard.aureycore.foundation.common.utils.TaskUtils;
 //
 //import org.bukkit.plugin.Plugin;
 //

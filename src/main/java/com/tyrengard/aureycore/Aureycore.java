@@ -17,5 +17,6 @@ public class Aureycore extends JavaPlugin {
     public void onDisable() {
 //        ActionBarEngine.stop(false);
         DamageIndicatorAPI.stop();
+
     }
 }

@@ -1,6 +1,6 @@
 package com.tyrengard.aureycore.damageindicator;
 
-import com.tyrengard.aureycore.common.stringformat.Color;
+import com.tyrengard.aureycore.foundation.common.stringformat.Color;
 import org.bukkit.Location;
 
 import java.text.DecimalFormat;
