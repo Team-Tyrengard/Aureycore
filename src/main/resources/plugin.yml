@@ -1,0 +1,8 @@
+name: Aureycore
+version: 1.0
+main: com.tyrengard.aureycore.Aureycore
+api-version: 1.17
+load: STARTUP
+authors: [ hayachikin, AureanAutumn ]
+prefix: Aureycore
+description: Spigot plugin framework and server utility

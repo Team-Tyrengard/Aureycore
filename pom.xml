@@ -4,30 +4,23 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.havengarde.aureycore</groupId>
-    <artifactId>aggregator</artifactId>
+    <groupId>com.tyrengard</groupId>
+    <artifactId>aureycore</artifactId>
     <version>1.0</version>
-    <packaging>pom</packaging>
-
-    <name>Aggregator - Aureycore</name>
+    <packaging>jar</packaging>
     <properties>
         <maven.compiler.version>3.8.1</maven.compiler.version>
         <maven.compiler.release>16</maven.compiler.release>
+        <maven.shade.version>3.3.0-SNAPSHOT</maven.shade.version>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
         <sentry.version>5.0.1</sentry.version>
+        <conduit.version>1.0</conduit.version>
     </properties>
 
-    <modules>
-        <module>aureycore-commons</module>
-        <module>aureycore-foundation</module>
-        <module>aureycore-actionbar-engine</module>
-        <module>aureycore-damage-indicator</module>
-        <module>aureycore-custom-guis</module>
-        <module>aureycore-custom-items</module>
-        <module>aureycore</module>
-    </modules>
+    <name>Aureycore</name>
+    <description>Spigot plugin framework and server utility</description>
 
     <repositories>
         <repository>
@@ -37,92 +30,134 @@
     </repositories>
 
     <dependencies>
-        <!-- Test dependencies -->
+        <!-- Foundation -->
+<!--        <dependency>-->
+<!--            <groupId>com.github.reiramirez.conduit</groupId>-->
+<!--            <artifactId>conduit-orm</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.github.reiramirez.conduit</groupId>-->
+<!--            <artifactId>conduit-annotations</artifactId>-->
+<!--            <version>1.0-SNAPSHOT</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-slf4j18-impl</artifactId>-->
+<!--            <version>2.14.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.logging.log4j</groupId>-->
+<!--            <artifactId>log4j-api</artifactId>-->
+<!--            <version>2.14.1</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.zaxxer</groupId>-->
+<!--            <artifactId>HikariCP</artifactId>-->
+<!--            <version>4.0.3</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <version>8.0.25</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.jetbrains</groupId>-->
+<!--            <artifactId>annotations-java5</artifactId>-->
+<!--            <version>20.1.0</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+        <!-- Morphia / MongoDB -->
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.0</version>
-            <scope>test</scope>
+            <groupId>dev.morphia.morphia</groupId>
+            <artifactId>morphia-core</artifactId>
+            <version>2.2.3</version>
         </dependency>
         <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.7.0</version>
-            <scope>test</scope>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>4.4.0</version>
         </dependency>
 
         <!-- Provided dependencies -->
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <version>1.18.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>net.havengarde.aureycore</groupId>
-                <artifactId>aureycore-commons</artifactId>
-                <version>1.0</version>
-                <scope>provided</scope>
-            </dependency>
-            <dependency>
-                <groupId>net.havengarde.aureycore</groupId>
-                <artifactId>aureycore-customguis</artifactId>
-                <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>net.havengarde.aureycore</groupId>
-                <artifactId>aureycore-customitems</artifactId>
-                <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>net.havengarde.aureycore</groupId>
-                <artifactId>aureycore-damage-indicator</artifactId>
-                <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>net.havengarde.aureycore</groupId>
-                <artifactId>aureycore-actionbar-engine</artifactId>
-                <version>1.0</version>
-            </dependency>
-            <dependency>
-                <groupId>net.havengarde.aureycore</groupId>
-                <artifactId>aureycore-foundation</artifactId>
-                <version>1.0</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <build>
         <defaultGoal>clean install</defaultGoal>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-shade-plugin</artifactId>
-                    <version>3.2.4</version>
-                    <configuration>
-                        <createDependencyReducedPom>false</createDependencyReducedPom>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <phase>package</phase>
-                            <goals>
-                                <goal>shade</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>${maven.shade.version}</version>
+                <configuration>
+                    <createDependencyReducedPom>false</createDependencyReducedPom>
+                    <relocations>
+                        <relocation>
+                            <pattern>com.google.gson</pattern>
+                            <shadedPattern>com.tyrengard.aureycore.internal.gson</shadedPattern>
+                        </relocation>
+<!--                        <relocation>-->
+<!--                            <pattern>dev.morphia</pattern>-->
+<!--                            <shadedPattern>com.tyrengard.aureycore.internal.morphia</shadedPattern>-->
+<!--                            <excludes>-->
+<!--                                <exclude>dev.morphia.annotations.*</exclude>-->
+<!--                            </excludes>-->
+<!--                        </relocation>-->
+                    </relocations>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>module-info.class</exclude>
+                                <exclude>META-INF/MANIFEST.MF</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>copy-files-on-build</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>../Test Server/plugins</outputDirectory>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/target</directory>
+                                    <include>${project.build.finalName}.jar</include>
+                                    <filtering>false</filtering>
+                                </resource>
+                            </resources>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
         <resources>
