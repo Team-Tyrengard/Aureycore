@@ -17,6 +17,7 @@
 
         <sentry.version>5.0.1</sentry.version>
         <conduit.version>1.0</conduit.version>
+        <aureycore.foundation.version>1.0-SNAPSHOT</aureycore.foundation.version>
     </properties>
 
     <name>Aureycore</name>
@@ -30,17 +31,10 @@
     </repositories>
 
     <dependencies>
-        <!-- Foundation -->
-        <!-- Morphia / MongoDB -->
         <dependency>
-            <groupId>dev.morphia.morphia</groupId>
-            <artifactId>morphia-core</artifactId>
-            <version>2.2.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mongodb</groupId>
-            <artifactId>mongodb-driver-sync</artifactId>
-            <version>4.4.0</version>
+            <groupId>com.tyrengard.aureycore</groupId>
+            <artifactId>aureycore-foundation</artifactId>
+            <version>${aureycore.foundation.version}</version>
         </dependency>
 
         <!-- Provided dependencies -->
