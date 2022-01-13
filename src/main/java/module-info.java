@@ -1,12 +1,11 @@
-module aureycore {
+module com.tyrengard.aureycore {
     requires org.bukkit;
     requires java.logging;
-    requires bungeecord.chat;
     requires morphia.core;
     requires org.mongodb.driver.sync.client;
     requires org.mongodb.driver.core;
     requires org.mongodb.bson;
-    requires annotations;
+    requires org.jetbrains.annotations;
     exports com.tyrengard.aureycore.common.anvilevents;
     exports com.tyrengard.aureycore.common.stringformat;
     exports com.tyrengard.aureycore.common.interfaces;
