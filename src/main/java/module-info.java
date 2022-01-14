@@ -6,6 +6,5 @@ module com.tyrengard.aureycore {
 
     exports com.tyrengard.aureycore.playerstate;
     exports com.tyrengard.aureycore.damageindicator;
-    exports com.tyrengard.aureycore.customguis;
     exports com.tyrengard.aureycore;
 }
